@@ -9,7 +9,7 @@
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..600;1,8..60,300..500&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="preload" as="image" href="assets/justicija.jpg">
 <style>
   :root{
@@ -33,7 +33,7 @@
     --on-dark-muted: rgba(244, 235, 227, 0.68);
     --on-dark-faint: rgba(244, 235, 227, 0.4);
     --line-dark: rgba(232, 201, 177, 0.18);
-    --serif: 'EB Garamond', 'Times New Roman', serif;
+    --serif: 'Source Serif 4', Georgia, serif;
     --sans: 'Manrope', system-ui, sans-serif;
     --ease: cubic-bezier(.2, .7, .1, 1);
     --container: 1280px;
@@ -208,9 +208,9 @@
   }
   .hero-inner { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; align-items: center; position: relative; }
   .hero-copy { container-type: inline-size; }
-  .hero-latin { font-family: var(--serif); font-style: italic; font-size: 20px; color: var(--bronze); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
-  .hero-latin::before { content: ""; width: 48px; height: 1px; background: var(--bronze); flex: none; }
-  .hero h1 { font-weight: 400; color: var(--on-dark); line-height: 1; margin-bottom: 32px; font-size: clamp(40px, 7.2vw, 104px); font-size: clamp(40px, 15cqi, 104px); letter-spacing: -0.02em; }
+  .hero-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--bronze); margin-bottom: 24px; display: flex; align-items: center; gap: 16px; }
+  .hero-eyebrow::before { content: ""; width: 48px; height: 1px; background: var(--bronze); flex: none; }
+  .hero h1 { font-weight: 400; color: var(--on-dark); line-height: 1; margin-bottom: 32px; font-size: clamp(28px, 5.6vw, 104px); font-size: clamp(28px, 10.8cqi, 104px); letter-spacing: -0.02em; }
   .hero h1 .ln { display: block; white-space: nowrap; }
   .hero h1 em { color: var(--bronze-light); font-weight: 400; }
   .hero .sub { font-size: 20px; line-height: 1.6; color: var(--on-dark-muted); max-width: 52ch; margin-bottom: 40px; }
@@ -229,7 +229,6 @@
     .hero-facts { grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 48px; }
     .hero-facts div:last-child { grid-column: 1 / -1; }
     .hero-facts b { font-size: 28px; }
-    .hero-latin { font-size: 16px; }
   }
 
   /* hero ulaz: tekst */
@@ -430,7 +429,6 @@
   .quis-grid { display: flex; flex-wrap: wrap; column-gap: 48px; row-gap: 32px; align-items: baseline; position: relative; }
   .qw { display: inline-flex; flex-direction: column; cursor: default; }
   .qw b { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(48px, 7vw, 104px); line-height: 1; color: var(--on-dark); transition: color .4s, transform .5s var(--ease); }
-  .qw span { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--bronze); font-weight: 700; margin-top: 12px; padding-left: 4px; }
   .qw:hover b { color: var(--bronze-light); transform: translateY(-4px); }
   .js-rv .qw { opacity: 0; filter: blur(12px); transform: translateY(24px); transition: opacity 1s var(--ease), filter 1s var(--ease), transform 1s var(--ease); transition-delay: var(--d, 0s); }
   .js-rv .quis-grid.in .qw { opacity: 1; filter: none; transform: none; }
@@ -456,6 +454,7 @@
     .pillar svg { grid-row: span 2; margin-bottom: 0; }
     .pillar .rn { right: 0; }
   }
+  @media (max-width: 600px) { .pillar h3 { font-size: 28px; } }
 
   /* ---------- OSNIVAČ ---------- */
   .founder-sec { background: var(--paper-2); }
@@ -561,7 +560,7 @@
   .closing { background: var(--accent); color: var(--paper); text-align: center; overflow: hidden; }
   .closing::before { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 80% at 50% 0%, rgba(255, 220, 190, 0.18), transparent 70%); }
   .closing .wrap { position: relative; }
-  .closing .lat { font-family: var(--serif); font-style: italic; font-size: clamp(40px, 6.4vw, 88px); line-height: 1.05; margin-bottom: 16px; }
+  .closing .lat { font-family: var(--serif); font-style: italic; font-size: clamp(40px, 6.4vw, 88px); line-height: 1.05; margin-bottom: 48px; }
   .closing .tr { font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--bronze-light); font-weight: 700; margin-bottom: 48px; }
   .closing .btn { background: var(--paper); color: var(--accent); border-color: var(--paper); }
   .closing .btn:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
@@ -639,9 +638,9 @@
     <section class="hero">
       <div class="wrap hero-inner">
         <div class="hero-copy">
-          <p class="hero-latin">Felix, qui causam loquitur prudentis in aurem</p>
-          <h1><span class="ln">Srećan je ko spor</span><span class="ln"><em>poveri mudrome.</em></span></h1>
-          <p class="sub">Advokat Pavle D. Milutinović sa timom advokata i pripravnika zastupa fizička lica i privredna društva u devet oblasti prava, od naknade štete i radnih sporova do krivične odbrane.</p>
+          <p class="hero-eyebrow">Advokatska kancelarija · Terazije 14/14, Beograd</p>
+          <h1><span class="ln">Pouzdan advokat</span><span class="ln"><em>za vaš pravni problem.</em></span></h1>
+          <p class="sub">Zastupamo građane i firme u devet oblasti prava: od naknade štete, otkaza i razvoda do poreskih postupaka i krivične odbrane. Na konsultacijama saznajete na čemu stojite i koji je sledeći korak.</p>
           <div class="hero-cta">
             <a href="#kontakt" class="btn">Zakažite konsultacije <svg viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
             <span class="call">ili pozovite <a href="tel:+38163605945" class="link-line">+381 63 605 945</a></span>
@@ -676,18 +675,18 @@
     </section>
 
     <!-- MAKSIME -->
-    <div class="maxims" aria-label="Latinske pravne maksime">
+    <div class="maxims" aria-label="Načela kancelarije">
       <div class="maxims-track">
         <div class="maxims-set">
-          <span>Felix, qui causam loquitur prudentis in aurem</span><i>§</i>
-          <span>Vincit malos pertinax bonitas</span><i>§</i>
-          <span>Quis? Quid? Ubi? Quibus auxiliis? Cur? Quomodo? Quando?</span><i>§</i>
+          <span>Srećan je onaj ko svoj spor govori u uši mudroga</span><i>§</i>
+          <span>Uporno dobro pobeđuje zlo</span><i>§</i>
+          <span>Ko? Šta? Gde? Čime? Zašto? Kako? Kada?</span><i>§</i>
           <span>Odgovornost · Stručnost · Profesionalnost</span><i>§</i>
         </div>
         <div class="maxims-set" aria-hidden="true">
-          <span>Felix, qui causam loquitur prudentis in aurem</span><i>§</i>
-          <span>Vincit malos pertinax bonitas</span><i>§</i>
-          <span>Quis? Quid? Ubi? Quibus auxiliis? Cur? Quomodo? Quando?</span><i>§</i>
+          <span>Srećan je onaj ko svoj spor govori u uši mudroga</span><i>§</i>
+          <span>Uporno dobro pobeđuje zlo</span><i>§</i>
+          <span>Ko? Šta? Gde? Čime? Zašto? Kako? Kada?</span><i>§</i>
           <span>Odgovornost · Stručnost · Profesionalnost</span><i>§</i>
         </div>
       </div>
@@ -908,17 +907,17 @@
           <p class="lead" data-rv style="--d:.15s">Od njih se polazi u rasvetljavanju krivičnog dela. Pristup je zadržan do danas, jer se odgovorima na ova pitanja dolazi do istine.</p>
         </div>
         <div class="quis-grid" data-rv-plain id="quis">
-          <span class="qw" style="--d:0s"><b>Quis?</b><span>Ko?</span></span>
-          <span class="qw" style="--d:.1s"><b>Quid?</b><span>Šta?</span></span>
-          <span class="qw" style="--d:.2s"><b>Ubi?</b><span>Gde?</span></span>
-          <span class="qw" style="--d:.3s"><b>Quibus auxiliis?</b><span>Čime?</span></span>
-          <span class="qw" style="--d:.4s"><b>Cur?</b><span>Zašto?</span></span>
-          <span class="qw" style="--d:.5s"><b>Quomodo?</b><span>Kako?</span></span>
-          <span class="qw" style="--d:.6s"><b>Quando?</b><span>Kada?</span></span>
+          <span class="qw" style="--d:0s"><b>Ko?</b></span>
+          <span class="qw" style="--d:.1s"><b>Šta?</b></span>
+          <span class="qw" style="--d:.2s"><b>Gde?</b></span>
+          <span class="qw" style="--d:.3s"><b>Čime?</b></span>
+          <span class="qw" style="--d:.4s"><b>Zašto?</b></span>
+          <span class="qw" style="--d:.5s"><b>Kako?</b></span>
+          <span class="qw" style="--d:.6s"><b>Kada?</b></span>
         </div>
         <div class="quis-note" data-rv>
-          <p class="lat">Felix, qui causam loquitur prudentis in aurem.</p>
-          <p>Srećan je onaj ko svoj spor govori u uši mudroga. Svako pitanje razuman čovek dobro i pravično reši. Tim pitanjima polazimo u krivičnim postupcima po Krivičnom zakoniku i Zakonu o privrednim prestupima, i u postupcima prema maloletnim licima.</p>
+          <p class="lat">Srećan je onaj ko svoj spor govori u uši mudroga.</p>
+          <p>Svako pitanje razuman čovek dobro i pravično reši. Tim pitanjima polazimo u krivičnim postupcima po Krivičnom zakoniku i Zakonu o privrednim prestupima, i u postupcima prema maloletnim licima.</p>
         </div>
       </div>
     </section>
@@ -1080,8 +1079,7 @@
     <!-- ZAVRŠNICA -->
     <section class="closing">
       <div class="wrap" data-rv>
-        <p class="lat">Vincit malos pertinax bonitas.</p>
-        <p class="tr">Uporno dobro pobeđuje zlo</p>
+        <p class="lat">Uporno dobro pobeđuje zlo.</p>
         <a href="tel:+38163605945" class="btn">Pozovite +381 63 605 945</a>
       </div>
     </section>
